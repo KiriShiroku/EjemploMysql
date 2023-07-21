@@ -1,0 +1,29 @@
+<%- include("templates/encabezado") %> 
+<%- include("templates/menu") %>
+
+<h1>Mostrar usuarios</h1>
+<table class="styled-table">
+  <thead>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Usuario</th>
+    <th>Password</th>
+    <th>Editar</th>
+  </thead>
+  <tbody>
+    <% usuarios.forEach((usuario)=>{ %>
+    <tr>
+      <td><%=usuario.id%></td>
+      <td><%=usuario.nombre%></td>
+      <td><%=usuario.usuario%></td>
+      <td><%=usuario.password%></td>
+      <td>
+        <a href="/modificarUsuario/<%=usuario.id%>">Editar</a> /
+        <a href="/borrarUsuario/<%=usuario.id%>">Borrado fisico</a> /
+        <a href="/borrarUsuario2/<%=usuario.id%>">Borrado logico</a>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+<%- include("templates/pie") %>

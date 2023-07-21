@@ -1,0 +1,23 @@
+<%- include("templates/encabezado") %>
+<%- include("templates/menu") %>
+<h1>Modificar usuario</h1>
+<form action="/modificarUsuario" method="post" id="formulario">
+    <div>
+        <input type="hidden" name="id" id="id" value="<%=usuario.id %>" >
+        <input type="text" name="nombre" id="nombre" autofocus placeholder="Nombre" value=<%=usuario.nombre %> >
+        <span id="mensajeNombre"></span>
+    </div>
+    <div>
+        <input type="text" name="usuario" id="usuario" placeholder="Usuario" value=<%=usuario.usuario %>>
+        <span id="mensajeNombre"></span>
+    </div>
+    <div>
+        <input type="password" name="password" id="password" placeholder="Contraseña" value=<%=usuario.password %>>
+        <span id="mensajeNombre"></span>
+    </div>
+    <div>
+        <button type="submit">Modificar usuario</button>
+    </div>
+</form>
+
+<%- include("templates/pie") %>
